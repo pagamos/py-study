@@ -1,0 +1,17 @@
+[
+  {
+    "user_id": "user_123",
+    "event_name": "app_opened",
+    "timestamp": 1793290000
+  },
+  {
+    "user_id": "user_456",
+    "event_name": "button_clicked",
+    "timestamp": 1793290100
+  },
+  {
+    "user_id": "user_123",
+    "event_name": "screen_viewed",
+    "timestamp": 1793290200
+  }
+]
