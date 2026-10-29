@@ -1,31 +1,56 @@
 import math
 
-def isEven(num):
-    return num % 2 == 0
-
-def findLargestNumber(list):
-    ret = list[0]
-    
+def removeDuplicates(list):
+    ret = []
     for item in list:
-        if item > ret:
-            ret = item
-    
+        if item not in ret:
+            ret.append(item)
     return ret
 
-def calculateFactorial(num):
-    if num < 2:
-        return 1
-    else:
-        return num * calculateFactorial(num -1)
+def splitInChunks(items, chunk):
+    ret = []
+    newList = []
+    i = 0
 
-def calculateAvarage(list):
-    total = 0
+    for item in items:
+        newList.append(item)
+        i += 1
 
-    for item in list:
-        total = total + item
+        if i == chunk:
+            ret.append(newList)
+            newList = []
+            i = 0
 
-    return total / len(list)
+    if newList:
+        ret.append(newList)
 
-def countDigits(num):
+    return ret
+
+def findCommonElements(listOne, listTwo):
+    ret = []
+    for item in listOne:
+        if item in listTwo:
+            ret.append(item)
+    return ret
+
+def rotateList(list):
+    ret = []
+    i = len(list) - 1
+    while i >= 0:
+        ret.append(list[i])
+        i -= 1
+    return ret
+
+def findSecondLargest(list):
+    largest = list[0]
+    second = float('-inf')
+    i = 0
+    while i < len(list):
+        if list[i] > largest:
+            second = largest
+            largest = list[i]
+        elif list[i] < largest and list[i] > second:
+            second = list[i]
+        i += 1
     
-    return len(str(num))
+    return second
